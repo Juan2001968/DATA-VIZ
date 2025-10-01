@@ -1,0 +1,1744 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Taller #2 Georreferenciación &#8212; TALLER 2</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Taller2_EVA_departamental';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Evaluaciones Agropecuarias Municipales (EVA) — Análisis Departamental" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="TALLER 2 - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="TALLER 2 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Evaluaciones Agropecuarias Municipales (EVA) — Análisis Departamental
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Taller #2 Georreferenciación</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FTaller2_EVA_departamental.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Taller2_EVA_departamental.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Taller #2 Georreferenciación</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivo-del-taller">Objetivo del taller</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros">1. Parámetros</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rutas-de-archivos">1. Rutas de Archivos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indicador-y-metodo-de-agregacion">2. Indicador y Método de Agregación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtros-opcionales">3. Filtros Opcionales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#personalizacion-del-mapa">4. Personalización del Mapa</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exportacion-de-resultados">5. Exportación de Resultados</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verificacion-de-ejecucion">6. Verificación de Ejecución</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importaciones">2. Importaciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utilidades">3. Utilidades</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normaliza-texto-x">1. <code class="docutils literal notranslate"><span class="pre">normaliza_texto(x)</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normaliza-nombre-dep-x">2. <code class="docutils literal notranslate"><span class="pre">normaliza_nombre_dep(x)</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detecta-indicador-col-df-prefer-none">3. <code class="docutils literal notranslate"><span class="pre">detecta_indicador_col(df,</span> <span class="pre">prefer=None)</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#carga-shp">4. Carga SHP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#carga-eva-agregacion">5. Carga EVA → Agregación</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cruce-y-validacion">6. Cruce y validación</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapa-coropletico">7. Mapa coroplético</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exportaciones">8. Exportaciones</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="taller-2-georreferenciacion">
+<h1>Taller #2 Georreferenciación<a class="headerlink" href="#taller-2-georreferenciacion" title="Link to this heading">#</a></h1>
+<p><strong>Autor:</strong> JUAN ANDRES RAMOS CARDONA</p>
+<section id="objetivo-del-taller">
+<h2>Objetivo del taller<a class="headerlink" href="#objetivo-del-taller" title="Link to this heading">#</a></h2>
+<p>Integrar un dataset abierto con el <strong>shapefile oficial del DANE</strong> para construir <strong>mapas coropléticos</strong> a nivel departamental en Python (GeoPandas), e <strong>interpretar</strong> patrones territoriales.</p>
+</section>
+<section id="parametros">
+<h2>1. Parámetros<a class="headerlink" href="#parametros" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">RUTA_SHP</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\Users\juana\Downloads\MGN2023_DPTO_POLITICO\MGN_ADM_DPTO_POLITICO.shp&quot;</span>
+
+<span class="n">RUTA_CSV</span> <span class="o">=</span> <span class="s2">&quot;Evaluaciones_Agropecuarias_Municipales_EVA_20250918.csv&quot;</span>
+
+<span class="n">INDICADOR_COL</span> <span class="o">=</span> <span class="kc">None</span>     <span class="c1"># pon aquí tu columna numérica, o deja None</span>
+<span class="n">AGREGACION</span> <span class="o">=</span> <span class="s2">&quot;sum&quot;</span>       <span class="c1"># &quot;sum&quot; o &quot;mean&quot;</span>
+
+<span class="n">FILTRO_ANIO</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">FILTRO_PRODUCTO</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="n">TITULO_MAPA</span> <span class="o">=</span> <span class="s2">&quot;EVA — Indicador agregado por Departamento&quot;</span>
+<span class="n">CMAP</span> <span class="o">=</span> <span class="s2">&quot;Blues&quot;</span>
+
+<span class="n">EXPORT_GEOJSON</span> <span class="o">=</span> <span class="s2">&quot;eva_departamental.geojson&quot;</span>
+<span class="n">EXPORT_CSV_JOIN</span> <span class="o">=</span> <span class="s2">&quot;eva_departamental_tabla.csv&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Parámetros OK&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros OK
+</pre></div>
+</div>
+</div>
+</div>
+<p>Este bloque define las rutas, filtros y configuraciones necesarias para generar un <strong>mapa departamental con datos agregados</strong> a partir de un shapefile y un archivo CSV.<br />
+La idea es centralizar todos los parámetros en un único lugar</p>
+<section id="rutas-de-archivos">
+<h3>1. Rutas de Archivos<a class="headerlink" href="#rutas-de-archivos" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>RUTA_SHP</strong>: contiene la ruta del archivo shapefile (.shp) con los polígonos de los departamentos.</p></li>
+<li><p><strong>RUTA_CSV</strong>: archivo con los datos (en este caso, evaluaciones agropecuarias municipales).<br />
+Estos archivos serán la base para la unión espacial y la visualización.</p></li>
+</ul>
+</section>
+<section id="indicador-y-metodo-de-agregacion">
+<h3>2. Indicador y Método de Agregación<a class="headerlink" href="#indicador-y-metodo-de-agregacion" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>INDICADOR_COL</strong>: columna numérica del CSV que se desea mapear (ejemplo: <code class="docutils literal notranslate"><span class="pre">produccion_toneladas</span></code>).</p>
+<ul>
+<li><p>Si está en <code class="docutils literal notranslate"><span class="pre">None</span></code>, no se usa ningún indicador específico.</p></li>
+</ul>
+</li>
+<li><p><strong>AGREGACION</strong>: define cómo se combinarán los valores municipales al nivel departamental:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;sum&quot;</span></code> → suma de los valores.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;mean&quot;</span></code> → promedio de los valores.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="filtros-opcionales">
+<h3>3. Filtros Opcionales<a class="headerlink" href="#filtros-opcionales" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>FILTRO_ANIO</strong>: sirve para restringir los datos a un año concreto (ejemplo: <code class="docutils literal notranslate"><span class="pre">2024</span></code>).</p></li>
+<li><p><strong>FILTRO_PRODUCTO</strong>: permite seleccionar un producto agropecuario específico (ejemplo: <code class="docutils literal notranslate"><span class="pre">&quot;Café&quot;</span></code>).</p>
+<ul>
+<li><p>Si están en <code class="docutils literal notranslate"><span class="pre">None</span></code>, se incluyen todos los años y productos.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="personalizacion-del-mapa">
+<h3>4. Personalización del Mapa<a class="headerlink" href="#personalizacion-del-mapa" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>TITULO_MAPA</strong>: texto que aparecerá como título en el mapa generado.</p></li>
+<li><p><strong>CMAP</strong>: paleta de colores utilizada para representar los valores (ejemplo: <code class="docutils literal notranslate"><span class="pre">&quot;Blues&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;Greens&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;Reds&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;viridis&quot;</span></code>).</p></li>
+</ul>
+</section>
+<section id="exportacion-de-resultados">
+<h3>5. Exportación de Resultados<a class="headerlink" href="#exportacion-de-resultados" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>EXPORT_GEOJSON</strong>: nombre del archivo de salida en formato GeoJSON que contendrá los departamentos con los datos agregados.</p></li>
+<li><p><strong>EXPORT_CSV_JOIN</strong>: archivo CSV con la tabla resultante de los indicadores calculados por departamento.</p></li>
+</ul>
+</section>
+<section id="verificacion-de-ejecucion">
+<h3>6. Verificación de Ejecución<a class="headerlink" href="#verificacion-de-ejecucion" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>print(“Parámetros OK”)</strong>: mensaje de confirmación para comprobar que los parámetros fueron cargados correctamente.</p></li>
+</ul>
+</section>
+</section>
+<section id="importaciones">
+<h2>2. Importaciones<a class="headerlink" href="#importaciones" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">_safe_import</span><span class="p">():</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">importlib</span><span class="o">,</span><span class="w"> </span><span class="nn">sys</span><span class="o">,</span><span class="w"> </span><span class="nn">subprocess</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">ensure</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">pip_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+            <span class="n">subprocess</span><span class="o">.</span><span class="n">check_call</span><span class="p">([</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">,</span> <span class="s2">&quot;-m&quot;</span><span class="p">,</span> <span class="s2">&quot;pip&quot;</span><span class="p">,</span> <span class="s2">&quot;install&quot;</span><span class="p">,</span> <span class="n">pip_name</span> <span class="ow">or</span> <span class="n">m</span><span class="p">])</span>
+            <span class="k">return</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+    <span class="n">gpd</span> <span class="o">=</span> <span class="n">ensure</span><span class="p">(</span><span class="s2">&quot;geopandas&quot;</span><span class="p">);</span> <span class="n">ensure</span><span class="p">(</span><span class="s2">&quot;shapely&quot;</span><span class="p">);</span> <span class="n">ensure</span><span class="p">(</span><span class="s2">&quot;unidecode&quot;</span><span class="p">);</span> <span class="n">ensure</span><span class="p">(</span><span class="s2">&quot;matplotlib&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">gpd</span>
+
+<span class="n">gpd</span> <span class="o">=</span> <span class="n">_safe_import</span><span class="p">()</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span><span class="o">,</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span><span class="o">,</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span><span class="o">,</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">unidecode</span><span class="w"> </span><span class="kn">import</span> <span class="n">unidecode</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s2">&quot;display.max_columns&quot;</span><span class="p">,</span> <span class="mi">120</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Imports OK&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Imports OK
+</pre></div>
+</div>
+</div>
+</div>
+<p>Este bloque asegura la carga de todas las librerías necesarias para trabajar con <strong>datos tabulares y geoespaciales</strong>, instalando automáticamente las que no estén disponibles en el entorno.</p>
+</section>
+<section id="utilidades">
+<h2>3. Utilidades<a class="headerlink" href="#utilidades" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">normaliza_texto</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">unidecode</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\s+&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">s</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">normaliza_nombre_dep</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">normaliza_texto</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">eq</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;BOGOTA&quot;</span><span class="p">:</span><span class="s2">&quot;BOGOTA, D.C.&quot;</span><span class="p">,</span><span class="s2">&quot;BOGOTA DC&quot;</span><span class="p">:</span><span class="s2">&quot;BOGOTA, D.C.&quot;</span><span class="p">,</span><span class="s2">&quot;BOGOTA D C&quot;</span><span class="p">:</span><span class="s2">&quot;BOGOTA, D.C.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;SANTAFE DE BOGOTA D C&quot;</span><span class="p">:</span><span class="s2">&quot;BOGOTA, D.C.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;ARCHIPIELAGO DE SAN ANDRES PROVIDENCIA Y SANTA CATALINA&quot;</span><span class="p">:</span><span class="s2">&quot;SAN ANDRES, PROVIDENCIA Y SANTA CATALINA&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;SAN ANDRES Y PROVIDENCIA&quot;</span><span class="p">:</span><span class="s2">&quot;SAN ANDRES, PROVIDENCIA Y SANTA CATALINA&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;SAN ANDRES&quot;</span><span class="p">:</span><span class="s2">&quot;SAN ANDRES, PROVIDENCIA Y SANTA CATALINA&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;VALLE&quot;</span><span class="p">:</span><span class="s2">&quot;VALLE DEL CAUCA&quot;</span><span class="p">,</span><span class="s2">&quot;NARINO&quot;</span><span class="p">:</span><span class="s2">&quot;NARIÑO&quot;</span><span class="p">,</span><span class="s2">&quot;GUAINIA&quot;</span><span class="p">:</span><span class="s2">&quot;GUAINIA&quot;</span><span class="p">,</span><span class="s2">&quot;VAUPES&quot;</span><span class="p">:</span><span class="s2">&quot;VAUPES&quot;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">eq</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">detecta_indicador_col</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">prefer</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">prefer</span> <span class="ow">and</span> <span class="n">prefer</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="ow">and</span> <span class="n">pd</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">is_numeric_dtype</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">prefer</span><span class="p">]):</span>
+        <span class="k">return</span> <span class="n">prefer</span>
+    <span class="n">excluir</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;DPTO_CCDGO&quot;</span><span class="p">,</span><span class="s2">&quot;DPTO_CNMBR&quot;</span><span class="p">,</span><span class="s2">&quot;DPTO&quot;</span><span class="p">,</span><span class="s2">&quot;DEPARTAMENTO&quot;</span><span class="p">,</span><span class="s2">&quot;NOMBRE&quot;</span><span class="p">,</span><span class="s2">&quot;NOMBRE_DPTO&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;COD_MPIO&quot;</span><span class="p">,</span><span class="s2">&quot;MPIO_CCDGO&quot;</span><span class="p">,</span><span class="s2">&quot;CODIGO_MPIO&quot;</span><span class="p">,</span><span class="s2">&quot;DIVIPOLA&quot;</span><span class="p">,</span><span class="s2">&quot;CODIGO_DIVIPOLA&quot;</span><span class="p">}</span>
+    <span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">c</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">excluir</span> <span class="ow">and</span> <span class="n">pd</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">is_numeric_dtype</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">c</span><span class="p">])]</span>
+    <span class="n">cand</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">c</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">&gt;</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">s</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">skipna</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+            <span class="n">cand</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">s</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">c</span><span class="p">))</span>
+    <span class="n">cand</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">cand</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">cand</span> <span class="k">else</span> <span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">nums</span> <span class="k">else</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Este bloque define tres funciones clave para <strong>preprocesar los datos</strong> antes de realizar la unión entre la tabla de evaluaciones y el shapefile.</p>
+<section id="normaliza-texto-x">
+<h3>1. <code class="docutils literal notranslate"><span class="pre">normaliza_texto(x)</span></code><a class="headerlink" href="#normaliza-texto-x" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Objetivo</strong>: estandarizar cadenas de texto para evitar inconsistencias en los nombres.</p></li>
+<li><p>Pasos que realiza:</p>
+<ol class="arabic simple">
+<li><p>Si el valor es nulo (<code class="docutils literal notranslate"><span class="pre">NaN</span></code>), retorna una cadena vacía.</p></li>
+<li><p>Convierte el valor a string y lo pasa a mayúsculas.</p></li>
+<li><p>Usa <code class="docutils literal notranslate"><span class="pre">unidecode</span></code> para eliminar acentos y caracteres especiales (ejemplo: <code class="docutils literal notranslate"><span class="pre">&quot;Nariño&quot;</span></code> → <code class="docutils literal notranslate"><span class="pre">&quot;NARINO&quot;</span></code>).</p></li>
+<li><p>Reemplaza múltiples espacios por uno solo y elimina espacios sobrantes en los extremos.</p></li>
+</ol>
+</li>
+<li><p>Resultado: un texto <strong>limpio, uniforme y en mayúsculas</strong>.</p></li>
+</ul>
+</section>
+<section id="normaliza-nombre-dep-x">
+<h3>2. <code class="docutils literal notranslate"><span class="pre">normaliza_nombre_dep(x)</span></code><a class="headerlink" href="#normaliza-nombre-dep-x" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Objetivo</strong>: unificar las diferentes formas en que pueden aparecer los nombres de los departamentos.</p></li>
+<li><p>Primero normaliza el texto con <code class="docutils literal notranslate"><span class="pre">normaliza_texto</span></code>.</p></li>
+<li><p>Luego aplica un diccionario (<code class="docutils literal notranslate"><span class="pre">eq</span></code>) con equivalencias, corrigiendo casos comunes:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;BOGOTA&quot;</span></code> o <code class="docutils literal notranslate"><span class="pre">&quot;BOGOTA</span> <span class="pre">DC&quot;</span></code> → <code class="docutils literal notranslate"><span class="pre">&quot;BOGOTA,</span> <span class="pre">D.C.&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;SAN</span> <span class="pre">ANDRES&quot;</span></code> o variantes → <code class="docutils literal notranslate"><span class="pre">&quot;SAN</span> <span class="pre">ANDRES,</span> <span class="pre">PROVIDENCIA</span> <span class="pre">Y</span> <span class="pre">SANTA</span> <span class="pre">CATALINA&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;VALLE&quot;</span></code> → <code class="docutils literal notranslate"><span class="pre">&quot;VALLE</span> <span class="pre">DEL</span> <span class="pre">CAUCA&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;NARINO&quot;</span></code> → <code class="docutils literal notranslate"><span class="pre">&quot;NARIÑO&quot;</span></code></p></li>
+</ul>
+</li>
+<li><p>Resultado: garantiza que todos los nombres departamentales tengan el mismo formato, evitando errores en la unión.</p></li>
+</ul>
+</section>
+<section id="detecta-indicador-col-df-prefer-none">
+<h3>3. <code class="docutils literal notranslate"><span class="pre">detecta_indicador_col(df,</span> <span class="pre">prefer=None)</span></code><a class="headerlink" href="#detecta-indicador-col-df-prefer-none" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Objetivo</strong>: identificar automáticamente cuál columna numérica del DataFrame puede servir como <strong>indicador principal</strong>.</p></li>
+<li><p>Lógica de selección:</p>
+<ol class="arabic simple">
+<li><p>Si se pasa un nombre de columna en <code class="docutils literal notranslate"><span class="pre">prefer</span></code> y cumple las condiciones, la usa.</p></li>
+<li><p>Excluye columnas que suelen ser identificadores o nombres (<code class="docutils literal notranslate"><span class="pre">DPTO_CCDGO</span></code>, <code class="docutils literal notranslate"><span class="pre">DEPARTAMENTO</span></code>, <code class="docutils literal notranslate"><span class="pre">CODIGO_MPIO</span></code>, etc.).</p></li>
+<li><p>Revisa qué columnas numéricas cumplen con:</p>
+<ul>
+<li><p>Tener al menos un valor no nulo.</p></li>
+<li><p>Tener variabilidad (<code class="docutils literal notranslate"><span class="pre">std</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>).</p></li>
+</ul>
+</li>
+<li><p>Ordena las candidatas por menor cantidad de valores faltantes y selecciona la mejor.</p></li>
+</ol>
+</li>
+<li><p>Resultado: devuelve el nombre de la columna más adecuada para el análisis o, en su defecto, la primera numérica disponible.</p></li>
+</ul>
+</section>
+</section>
+<section id="carga-shp">
+<h2>4. Carga SHP<a class="headerlink" href="#carga-shp" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shp_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">RUTA_SHP</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">shp_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+    <span class="n">alt</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/mnt/data/MGN_ADM_DPTO_POLITICO.shp&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">alt</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span> <span class="n">shp_path</span> <span class="o">=</span> <span class="n">alt</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SHP:&quot;</span><span class="p">,</span> <span class="n">shp_path</span><span class="p">)</span>
+
+<span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">shp_path</span><span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;dpto_ccdgo&quot;</span><span class="p">:</span><span class="s2">&quot;DPTO_CCDGO&quot;</span><span class="p">,</span><span class="s2">&quot;dpto_cnmbr&quot;</span><span class="p">:</span><span class="s2">&quot;DPTO_CNMBR&quot;</span><span class="p">})</span>
+<span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;DPTO_CCDGO&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;DPTO_CCDGO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(\d+)&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;DPTO_CNMBR_NORM&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;DPTO_CNMBR&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">normaliza_nombre_dep</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">gdf</span><span class="o">.</span><span class="n">crs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="n">gdf</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">set_crs</span><span class="p">(</span><span class="mi">4686</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span> <span class="n">gdf</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="mi">4686</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CRS warn:&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+
+<span class="n">gdf</span><span class="p">[[</span><span class="s2">&quot;DPTO_CCDGO&quot;</span><span class="p">,</span><span class="s2">&quot;DPTO_CNMBR&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SHP: C:\Users\juana\Downloads\MGN2023_DPTO_POLITICO\MGN_ADM_DPTO_POLITICO.shp
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>DPTO_CCDGO</th>
+      <th>DPTO_CNMBR</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>05</td>
+      <td>ANTIOQUIA</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>08</td>
+      <td>ATLÁNTICO</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>11</td>
+      <td>BOGOTÁ, D.C.</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>13</td>
+      <td>BOLÍVAR</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>15</td>
+      <td>BOYACÁ</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Este bloque se encarga de <strong>cargar el shapefile de departamentos de Colombia</strong>, estandarizar sus columnas y preparar los datos para que puedan unirse correctamente con la información del CSV de indicadores.</p>
+<ol class="arabic simple">
+<li><p><strong>Definición de la ruta del shapefile</strong></p>
+<ul class="simple">
+<li><p>Se crea la ruta con <code class="docutils literal notranslate"><span class="pre">Path(RUTA_SHP)</span></code>.</p></li>
+<li><p>Si el archivo no existe en esa ubicación, se intenta buscar en una ruta alternativa (<code class="docutils literal notranslate"><span class="pre">/mnt/data/...</span></code>).</p></li>
+<li><p>Finalmente, se imprime la ruta que se está utilizando para verificar que fue encontrada.</p></li>
+</ul>
+</li>
+<li><p><strong>Lectura del shapefile</strong></p>
+<ul class="simple">
+<li><p>Se usa <code class="docutils literal notranslate"><span class="pre">gpd.read_file(shp_path)</span></code> para leer el archivo con <strong>GeoPandas</strong>.</p></li>
+<li><p>Las columnas principales se renombran para estandarizarlas:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">dpto_ccdgo</span></code> pasa a <code class="docutils literal notranslate"><span class="pre">DPTO_CCDGO</span></code> (código del departamento).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dpto_cnmbr</span></code> pasa a <code class="docutils literal notranslate"><span class="pre">DPTO_CNMBR</span></code> (nombre del departamento).</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Limpieza de columnas</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">DPTO_CCDGO</span></code>:</p>
+<ul>
+<li><p>Se convierte a texto.</p></li>
+<li><p>Se extraen solo los números con una expresión regular.</p></li>
+<li><p>Se rellenan con ceros a la izquierda para asegurar que todos los códigos tengan exactamente <strong>2 dígitos</strong>.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DPTO_CNMBR_NORM</span></code>:</p>
+<ul>
+<li><p>Se aplica la función <code class="docutils literal notranslate"><span class="pre">normaliza_nombre_dep</span></code> para unificar los nombres de los departamentos y evitar variaciones (ejemplo: <code class="docutils literal notranslate"><span class="pre">&quot;VALLE&quot;</span></code> → <code class="docutils literal notranslate"><span class="pre">&quot;VALLE</span> <span class="pre">DEL</span> <span class="pre">CAUCA&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;BOGOTA</span> <span class="pre">DC&quot;</span></code> → <code class="docutils literal notranslate"><span class="pre">&quot;BOGOTA,</span> <span class="pre">D.C.&quot;</span></code>).</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Sistema de coordenadas (CRS)</strong></p>
+<ul class="simple">
+<li><p>Se valida si el GeoDataFrame tiene definido un sistema de referencia espacial (<code class="docutils literal notranslate"><span class="pre">crs</span></code>).</p></li>
+<li><p>Si no tiene (<code class="docutils literal notranslate"><span class="pre">None</span></code>), se asigna directamente el EPSG:4686 (MAGNA-SIRGAS, estándar en Colombia).</p></li>
+<li><p>Si ya tiene CRS, se transforma a ese sistema para mantener uniformidad.</p></li>
+<li><p>Si ocurre algún error, se imprime una advertencia con <code class="docutils literal notranslate"><span class="pre">&quot;CRS</span> <span class="pre">warn&quot;</span></code>.</p></li>
+</ul>
+</li>
+<li><p><strong>Visualización rápida</strong></p>
+<ul class="simple">
+<li><p>Se muestran las primeras filas de <code class="docutils literal notranslate"><span class="pre">DPTO_CCDGO</span></code> y <code class="docutils literal notranslate"><span class="pre">DPTO_CNMBR</span></code> para comprobar que los códigos y nombres fueron cargados y estandarizados correctamente.</p></li>
+</ul>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">csv</span><span class="o">,</span><span class="w"> </span><span class="nn">io</span>
+
+<span class="n">csv_path</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\Users\juana\Downloads\Evaluaciones_Agropecuarias_Municipales_EVA_20250918.csv&quot;</span>  <span class="c1"># ajusta si es otra ruta</span>
+
+<span class="c1"># 1) Mira unas líneas para oler el archivo</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">csv_path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;replace&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">next</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">200</span><span class="p">)])</span>  <span class="c1"># 200 líneas de muestra</span>
+
+<span class="c1"># 2) Detecta delimitador (prueba , ; | \t)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">dialect</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">Sniffer</span><span class="p">()</span><span class="o">.</span><span class="n">sniff</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">delimiters</span><span class="o">=</span><span class="s2">&quot;,;|</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">delim</span> <span class="o">=</span> <span class="n">dialect</span><span class="o">.</span><span class="n">delimiter</span>
+<span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+    <span class="c1"># si no pudo “oler”, asume ; (frecuente en archivos de DANE)</span>
+    <span class="n">delim</span> <span class="o">=</span> <span class="s2">&quot;;&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Delimitador detectado:&quot;</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">delim</span><span class="p">))</span>
+
+<span class="c1"># 3) Intenta leer con comillas normales</span>
+<span class="n">read_kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">sep</span><span class="o">=</span><span class="n">delim</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;python&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span>
+                   <span class="n">quotechar</span><span class="o">=</span><span class="s1">&#39;&quot;&#39;</span><span class="p">,</span> <span class="n">escapechar</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">skipinitialspace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                   <span class="n">on_bad_lines</span><span class="o">=</span><span class="s2">&quot;skip&quot;</span><span class="p">)</span>  <span class="c1"># salta solo filas mal formadas</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">eva</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csv_path</span><span class="p">,</span> <span class="o">**</span><span class="n">read_kwargs</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Primer intento falló:&quot;</span><span class="p">,</span> <span class="n">e1</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Reintentando sin tratar comillas…&quot;</span><span class="p">)</span>
+    <span class="c1"># 4) Plan B: tratar TODAS las comillas como texto normal</span>
+    <span class="n">read_kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;quotechar&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="n">eva</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csv_path</span><span class="p">,</span> <span class="n">quoting</span><span class="o">=</span><span class="n">csv</span><span class="o">.</span><span class="n">QUOTE_NONE</span><span class="p">,</span> <span class="o">**</span><span class="n">read_kwargs</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Leído OK:&quot;</span><span class="p">,</span> <span class="n">eva</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">eva</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Delimitador detectado: &#39;,&#39;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Leído OK: (206068, 17)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CÓD. \nDEP.</th>
+      <th>DEPARTAMENTO</th>
+      <th>CÓD. MUN.</th>
+      <th>MUNICIPIO</th>
+      <th>GRUPO \nDE CULTIVO</th>
+      <th>SUBGRUPO \nDE CULTIVO</th>
+      <th>CULTIVO</th>
+      <th>DESAGREGACIÓN REGIONAL Y/O SISTEMA PRODUCTIVO</th>
+      <th>AÑO</th>
+      <th>PERIODO</th>
+      <th>Área Sembrada\n(ha)</th>
+      <th>Área Cosechada\n(ha)</th>
+      <th>Producción\n(t)</th>
+      <th>Rendimiento\n(t/ha)</th>
+      <th>ESTADO FISICO PRODUCCION</th>
+      <th>NOMBRE \nCIENTIFICO</th>
+      <th>CICLO DE CULTIVO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>15</td>
+      <td>BOYACA</td>
+      <td>15,114</td>
+      <td>BUSBANZA</td>
+      <td>HORTALIZAS</td>
+      <td>ACELGA</td>
+      <td>ACELGA</td>
+      <td>ACELGA</td>
+      <td>2,006</td>
+      <td>2006B</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1.00</td>
+      <td>FRUTO FRESCO</td>
+      <td>BETA VULGARIS</td>
+      <td>TRANSITORIO</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>25</td>
+      <td>CUNDINAMARCA</td>
+      <td>25,754</td>
+      <td>SOACHA</td>
+      <td>HORTALIZAS</td>
+      <td>ACELGA</td>
+      <td>ACELGA</td>
+      <td>ACELGA</td>
+      <td>2,006</td>
+      <td>2006B</td>
+      <td>82</td>
+      <td>80</td>
+      <td>1,440</td>
+      <td>18.00</td>
+      <td>FRUTO FRESCO</td>
+      <td>BETA VULGARIS</td>
+      <td>TRANSITORIO</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>25</td>
+      <td>CUNDINAMARCA</td>
+      <td>25,214</td>
+      <td>COTA</td>
+      <td>HORTALIZAS</td>
+      <td>ACELGA</td>
+      <td>ACELGA</td>
+      <td>ACELGA</td>
+      <td>2,006</td>
+      <td>2006B</td>
+      <td>2</td>
+      <td>2</td>
+      <td>26</td>
+      <td>17.33</td>
+      <td>FRUTO FRESCO</td>
+      <td>BETA VULGARIS</td>
+      <td>TRANSITORIO</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>54</td>
+      <td>NORTE DE SANTANDER</td>
+      <td>54,405</td>
+      <td>LOS PATIOS</td>
+      <td>HORTALIZAS</td>
+      <td>ACELGA</td>
+      <td>ACELGA</td>
+      <td>ACELGA</td>
+      <td>2,006</td>
+      <td>2006B</td>
+      <td>3</td>
+      <td>3</td>
+      <td>48</td>
+      <td>16.00</td>
+      <td>FRUTO FRESCO</td>
+      <td>BETA VULGARIS</td>
+      <td>TRANSITORIO</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>54</td>
+      <td>NORTE DE SANTANDER</td>
+      <td>54,518</td>
+      <td>PAMPLONA</td>
+      <td>HORTALIZAS</td>
+      <td>ACELGA</td>
+      <td>ACELGA</td>
+      <td>ACELGA</td>
+      <td>2,006</td>
+      <td>2006B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>5</td>
+      <td>10.00</td>
+      <td>FRUTO FRESCO</td>
+      <td>BETA VULGARIS</td>
+      <td>TRANSITORIO</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>La salida muestra que el archivo fue leído correctamente con <strong>206,068 filas y 17 columnas</strong>, usando <code class="docutils literal notranslate"><span class="pre">,</span></code> como delimitador. A continuación, se describen los elementos principales observados en las primeras filas:</p>
+<ol class="arabic simple">
+<li><p><strong>Estructura básica</strong></p>
+<ul class="simple">
+<li><p>Cada fila representa un <strong>registro a nivel municipal y de cultivo</strong> para un año y período específicos.</p></li>
+<li><p>Incluye información de <strong>departamento, municipio, cultivo, superficie, producción y rendimiento</strong>.</p></li>
+</ul>
+</li>
+<li><p><strong>Columnas clave</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">CÓD.</span> <span class="pre">DEP.</span></code> → Código del departamento en formato numérico (ejemplo: 15 = Boyacá, 25 = Cundinamarca, 54 = Norte de Santander).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DEPARTAMENTO</span></code> → Nombre del departamento asociado.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CÓD.</span> <span class="pre">MUN.</span></code> → Código municipal (algunos aparecen con coma como separador de miles, ejemplo: <code class="docutils literal notranslate"><span class="pre">25,754</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MUNICIPIO</span></code> → Nombre del municipio.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GRUPO</span> <span class="pre">DE</span> <span class="pre">CULTIVO</span></code> y <code class="docutils literal notranslate"><span class="pre">SUBGRUPO</span> <span class="pre">DE</span> <span class="pre">CULTIVO</span></code> → Clasificación del cultivo (ejemplo: Hortalizas → Acelga).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CULTIVO</span></code> → Nombre del cultivo específico.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DESAGREGACIÓN</span> <span class="pre">REGIONAL</span> <span class="pre">Y/O</span> <span class="pre">SISTEMA</span> <span class="pre">PRODUCTIVO</span></code> → Detalle adicional del cultivo/producto.</p></li>
+</ul>
+</li>
+<li><p><strong>Variables temporales</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">AÑO</span></code> → Año de referencia (ejemplo: <code class="docutils literal notranslate"><span class="pre">2006</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PERIODO</span></code> → Semestre o temporada agrícola (ejemplo: <code class="docutils literal notranslate"><span class="pre">2006B</span></code>).</p></li>
+</ul>
+</li>
+<li><p><strong>Variables productivas</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Área</span> <span class="pre">Sembrada</span> <span class="pre">(ha)</span></code> → Hectáreas sembradas en el período.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Área</span> <span class="pre">Cosechada</span> <span class="pre">(ha)</span></code> → Hectáreas cosechadas.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Producción</span> <span class="pre">(t)</span></code> → Producción total en toneladas.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Rendimiento</span> <span class="pre">(t/ha)</span></code> → Relación entre producción y superficie cosechada.</p></li>
+</ul>
+</li>
+<li><p><strong>Otras variables descriptivas</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ESTADO</span> <span class="pre">FISICO</span> <span class="pre">PRODUCCION</span></code> → Tipo de presentación del producto (ejemplo: “FRUTO FRESCO”).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NOMBRE</span> <span class="pre">CIENTIFICO</span></code> → Nombre botánico (ejemplo: <em>Beta vulgaris</em> para acelga).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CICLO</span> <span class="pre">DE</span> <span class="pre">CULTIVO</span></code> → Si el cultivo es <strong>transitorio</strong> o permanente.</p></li>
+</ul>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># === DESCUBRIR COLUMNA DE CÓDIGO DE DPTO y CREAR DPTO_CCDGO ===</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span><span class="o">,</span><span class="w"> </span><span class="nn">unicodedata</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># 1) Mira los nombres REALES de columnas (índice + repr para ver espacios/acentos)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Columnas de EVA:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">eva</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">:</span><span class="s2">&gt;3</span><span class="si">}</span><span class="s2"> -&gt; </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 2) Normalizador de encabezados (sin tildes, minúsculas, sin signos)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">norm</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">unicodedata</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="s2">&quot;NFKD&quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ch</span> <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">s</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">unicodedata</span><span class="o">.</span><span class="n">combining</span><span class="p">(</span><span class="n">ch</span><span class="p">))</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;[^a-z0-9]+&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\s+&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">s</span>
+
+<span class="n">cols_norm</span> <span class="o">=</span> <span class="p">{</span><span class="n">c</span><span class="p">:</span> <span class="n">norm</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">eva</span><span class="o">.</span><span class="n">columns</span><span class="p">}</span>
+
+<span class="c1"># 3) Candidata de CÓDIGO DE DPTO (busca &quot;cod&quot; y &quot;dep&quot; / &quot;depto&quot; / &quot;depart&quot;)</span>
+<span class="n">cand_dpto</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span><span class="p">,</span><span class="n">n</span> <span class="ow">in</span> <span class="n">cols_norm</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+             <span class="k">if</span> <span class="s2">&quot;cod&quot;</span> <span class="ow">in</span> <span class="n">n</span> <span class="ow">and</span> <span class="nb">any</span><span class="p">(</span><span class="n">k</span> <span class="ow">in</span> <span class="n">n</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;dep&quot;</span><span class="p">,</span> <span class="s2">&quot;depto&quot;</span><span class="p">,</span> <span class="s2">&quot;depart&quot;</span><span class="p">])]</span>
+
+<span class="c1"># 4) Candidata de CÓDIGO DE MUNICIPIO por si toca derivar (DIVIPOLA, mpio, municipio)</span>
+<span class="n">cand_mpio</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span><span class="p">,</span><span class="n">n</span> <span class="ow">in</span> <span class="n">cols_norm</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+             <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">k</span> <span class="ow">in</span> <span class="n">n</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;mpio&quot;</span><span class="p">,</span><span class="s2">&quot;municip&quot;</span><span class="p">,</span><span class="s2">&quot;divipola&quot;</span><span class="p">,</span><span class="s2">&quot;cod mpio&quot;</span><span class="p">,</span><span class="s2">&quot;codigo mpio&quot;</span><span class="p">,</span><span class="s2">&quot;cod municipio&quot;</span><span class="p">])]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Posibles columnas de código de DPTO:&quot;</span><span class="p">,</span> <span class="n">cand_dpto</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Posibles columnas de código de MPIO:&quot;</span><span class="p">,</span> <span class="n">cand_mpio</span><span class="p">)</span>
+
+<span class="c1"># 5) Crear DPTO_CCDGO</span>
+<span class="k">if</span> <span class="n">cand_dpto</span><span class="p">:</span>
+    <span class="n">col_dpto</span> <span class="o">=</span> <span class="n">cand_dpto</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">✅ Usando columna de DPTO: </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">col_dpto</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">eva</span><span class="p">[</span><span class="s2">&quot;DPTO_CCDGO&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">eva</span><span class="p">[</span><span class="n">col_dpto</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+                         <span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(\d+)&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+                         <span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="k">elif</span> <span class="n">cand_mpio</span><span class="p">:</span>
+    <span class="n">col_mpio</span> <span class="o">=</span> <span class="n">cand_mpio</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">✅ Derivando DPTO_CCDGO desde MPIO: </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">col_mpio</span><span class="p">)</span><span class="si">}</span><span class="s2"> (primeros 2 dígitos)&quot;</span><span class="p">)</span>
+    <span class="n">base</span> <span class="o">=</span> <span class="n">eva</span><span class="p">[</span><span class="n">col_mpio</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(\d+)&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">eva</span><span class="p">[</span><span class="s2">&quot;DPTO_CCDGO&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">str</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No encontré columna de código de DPTO ni de MPIO. Dime cuál es y lo dejamos fijo.&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">DPTO_CCDGO únicos en EVA:&quot;</span><span class="p">,</span> <span class="n">eva</span><span class="p">[</span><span class="s2">&quot;DPTO_CCDGO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">eva</span><span class="p">[</span><span class="s2">&quot;DPTO_CCDGO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Columnas de EVA:
+  0 -&gt; &#39;CÓD. \nDEP.&#39;
+  1 -&gt; &#39;DEPARTAMENTO&#39;
+  2 -&gt; &#39;CÓD. MUN.&#39;
+  3 -&gt; &#39;MUNICIPIO&#39;
+  4 -&gt; &#39;GRUPO \nDE CULTIVO&#39;
+  5 -&gt; &#39;SUBGRUPO \nDE CULTIVO&#39;
+  6 -&gt; &#39;CULTIVO&#39;
+  7 -&gt; &#39;DESAGREGACIÓN REGIONAL Y/O SISTEMA PRODUCTIVO&#39;
+  8 -&gt; &#39;AÑO&#39;
+  9 -&gt; &#39;PERIODO&#39;
+ 10 -&gt; &#39;Área Sembrada\n(ha)&#39;
+ 11 -&gt; &#39;Área Cosechada\n(ha)&#39;
+ 12 -&gt; &#39;Producción\n(t)&#39;
+ 13 -&gt; &#39;Rendimiento\n(t/ha)&#39;
+ 14 -&gt; &#39;ESTADO FISICO PRODUCCION&#39;
+ 15 -&gt; &#39;NOMBRE \nCIENTIFICO&#39;
+ 16 -&gt; &#39;CICLO DE CULTIVO&#39;
+
+Posibles columnas de código de DPTO: [&#39;CÓD. \nDEP.&#39;]
+Posibles columnas de código de MPIO: [&#39;MUNICIPIO&#39;]
+
+✅ Usando columna de DPTO: &#39;CÓD. \nDEP.&#39;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DPTO_CCDGO únicos en EVA: 32
+DPTO_CCDGO
+15    20576
+05    18759
+25    17805
+41    15926
+76    15774
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>La salida corresponde al análisis de las columnas del archivo EVA y a la identificación de los códigos departamentales (DPTO).</p>
+<ol class="arabic simple">
+<li><p><strong>Listado de columnas</strong></p>
+<ul class="simple">
+<li><p>Se enumeran las <strong>18 columnas del DataFrame</strong> (índices del 0 al 17).</p></li>
+<li><p>Incluyen variables de identificación (<code class="docutils literal notranslate"><span class="pre">CÓD.</span> <span class="pre">DEP.</span></code>, <code class="docutils literal notranslate"><span class="pre">DEPARTAMENTO</span></code>, <code class="docutils literal notranslate"><span class="pre">CÓD.</span> <span class="pre">MUN.</span></code>, <code class="docutils literal notranslate"><span class="pre">MUNICIPIO</span></code>), de clasificación (<code class="docutils literal notranslate"><span class="pre">GRUPO</span> <span class="pre">DE</span> <span class="pre">CULTIVO</span></code>, <code class="docutils literal notranslate"><span class="pre">SUBGRUPO</span></code>, <code class="docutils literal notranslate"><span class="pre">CULTIVO</span></code>), temporales (<code class="docutils literal notranslate"><span class="pre">AÑO</span></code>, <code class="docutils literal notranslate"><span class="pre">PERIODO</span></code>), productivas (<code class="docutils literal notranslate"><span class="pre">Área</span> <span class="pre">Sembrada</span></code>, <code class="docutils literal notranslate"><span class="pre">Área</span> <span class="pre">Cosechada</span></code>, <code class="docutils literal notranslate"><span class="pre">Producción</span></code>, <code class="docutils literal notranslate"><span class="pre">Rendimiento</span></code>) y descriptivas (<code class="docutils literal notranslate"><span class="pre">Estado</span> <span class="pre">físico</span></code>, <code class="docutils literal notranslate"><span class="pre">Nombre</span> <span class="pre">científico</span></code>, <code class="docutils literal notranslate"><span class="pre">Ciclo</span> <span class="pre">de</span> <span class="pre">cultivo</span></code>).</p></li>
+<li><p>También aparece la columna estandarizada <code class="docutils literal notranslate"><span class="pre">DPTO_CCDGO</span></code>.</p></li>
+</ul>
+</li>
+<li><p><strong>Identificación de columnas clave</strong></p>
+<ul class="simple">
+<li><p><strong>Posibles códigos de departamento (DPTO)</strong>: <code class="docutils literal notranslate"><span class="pre">'CÓD.</span> <span class="pre">\nDEP.'</span></code>.</p></li>
+<li><p><strong>Posibles códigos de municipio (MPIO)</strong>: <code class="docutils literal notranslate"><span class="pre">'MUNICIPIO'</span></code> (aunque aquí parece que no es un código sino un nombre; por tanto, se deberá usar con precaución).</p></li>
+</ul>
+</li>
+<li><p><strong>Selección final</strong></p>
+<ul class="simple">
+<li><p>Se confirma que se usará <code class="docutils literal notranslate"><span class="pre">'CÓD.</span> <span class="pre">\nDEP.'</span></code> como <strong>columna principal para identificar el departamento</strong>, pues es la que contiene los códigos departamentales.</p></li>
+</ul>
+</li>
+<li><p><strong>Validación de cobertura departamental</strong></p>
+<ul class="simple">
+<li><p>Se encuentran <strong>32 valores únicos</strong> en <code class="docutils literal notranslate"><span class="pre">DPTO_CCDGO</span></code>, lo que coincide con el número de departamentos de Colombia (incluyendo Bogotá D.C. y San Andrés).</p></li>
+<li><p>Esto confirma que el dataset cubre todos los departamentos.</p></li>
+</ul>
+</li>
+<li><p><strong>Distribución de registros por departamento (ejemplo de top 5)</strong></p>
+<ul class="simple">
+<li><p>Boyacá (<code class="docutils literal notranslate"><span class="pre">15</span></code>) → 20,576 registros.</p></li>
+<li><p>Antioquia (<code class="docutils literal notranslate"><span class="pre">05</span></code>) → 18,759 registros.</p></li>
+<li><p>Cundinamarca (<code class="docutils literal notranslate"><span class="pre">25</span></code>) → 17,805 registros.</p></li>
+<li><p>Huila (<code class="docutils literal notranslate"><span class="pre">41</span></code>) → 15,926 registros.</p></li>
+<li><p>Valle del Cauca (<code class="docutils literal notranslate"><span class="pre">76</span></code>) → 15,774 registros.</p></li>
+<li><p>Se observa que los departamentos con mayor diversidad/productividad agrícola concentran más registros en el dataset.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="carga-eva-agregacion">
+<h2>5. Carga EVA → Agregación<a class="headerlink" href="#carga-eva-agregacion" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ==== DIAGNÓSTICO RÁPIDO Y ARREGLO ====</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+
+<span class="c1"># 0) Revisar filtros (año/producto). Si los pusiste, apágalos para probar.</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FILTRO_ANIO =&quot;</span><span class="p">,</span> <span class="n">FILTRO_ANIO</span><span class="p">,</span> <span class="s2">&quot;| FILTRO_PRODUCTO =&quot;</span><span class="p">,</span> <span class="n">FILTRO_PRODUCTO</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">NameError</span><span class="p">:</span>
+    <span class="n">FILTRO_ANIO</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">FILTRO_PRODUCTO</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Filas EVA:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">eva</span><span class="p">))</span>
+
+<span class="c1"># 1) Ver DPTO_CCDGO en EVA</span>
+<span class="k">if</span> <span class="s1">&#39;DPTO_CCDGO&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">eva</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="c1"># intenta derivarlo de MPIO o de una columna de dpto</span>
+    <span class="n">col_dpto</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">eva</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="s2">&quot;dpto&quot;</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">&quot;cod&quot;</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">or</span> <span class="s2">&quot;ccdgo&quot;</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">lower</span><span class="p">())),</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="n">col_mpio</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">eva</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">k</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;mpio&quot;</span><span class="p">,</span><span class="s2">&quot;municip&quot;</span><span class="p">,</span><span class="s2">&quot;divipola&quot;</span><span class="p">])),</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">col_dpto</span><span class="p">:</span>
+        <span class="n">eva</span><span class="p">[</span><span class="s2">&quot;DPTO_CCDGO&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">eva</span><span class="p">[</span><span class="n">col_dpto</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(\d+)&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">col_mpio</span><span class="p">:</span>
+        <span class="n">base</span> <span class="o">=</span> <span class="n">eva</span><span class="p">[</span><span class="n">col_mpio</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(\d+)&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">eva</span><span class="p">[</span><span class="s2">&quot;DPTO_CCDGO&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">str</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No se pudo crear DPTO_CCDGO en EVA.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DPTO_CCDGO únicos en EVA:&quot;</span><span class="p">,</span> <span class="n">eva</span><span class="p">[</span><span class="s2">&quot;DPTO_CCDGO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">eva</span><span class="p">[</span><span class="s2">&quot;DPTO_CCDGO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="c1"># 2) Elige/Forza el INDICADOR correcto</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_detecta_indicador_col</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">prefer</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">prefer</span> <span class="ow">and</span> <span class="n">prefer</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="ow">and</span> <span class="n">pd</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">is_numeric_dtype</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">prefer</span><span class="p">]):</span>
+        <span class="k">return</span> <span class="n">prefer</span>
+    <span class="c1"># Si viene en texto, igual lo vamos a convertir abajo</span>
+    <span class="n">excluir</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;DPTO_CCDGO&quot;</span><span class="p">,</span><span class="s2">&quot;DPTO_CNMBR&quot;</span><span class="p">,</span><span class="s2">&quot;DPTO&quot;</span><span class="p">,</span><span class="s2">&quot;DEPARTAMENTO&quot;</span><span class="p">,</span><span class="s2">&quot;NOMBRE&quot;</span><span class="p">,</span><span class="s2">&quot;NOMBRE_DPTO&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;COD_MPIO&quot;</span><span class="p">,</span><span class="s2">&quot;MPIO_CCDGO&quot;</span><span class="p">,</span><span class="s2">&quot;CODIGO_MPIO&quot;</span><span class="p">,</span><span class="s2">&quot;DIVIPOLA&quot;</span><span class="p">,</span><span class="s2">&quot;CODIGO_DIVIPOLA&quot;</span><span class="p">}</span>
+    <span class="n">candidatos</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">c</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">excluir</span><span class="p">]</span>
+    <span class="c1"># prioriza columnas con muchos valores no vacíos</span>
+    <span class="n">candidatos</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">candidatos</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="o">-</span><span class="n">df</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">candidatos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">indicador</span>
+<span class="k">except</span> <span class="ne">NameError</span><span class="p">:</span>
+    <span class="n">indicador</span> <span class="o">=</span> <span class="n">_detecta_indicador_col</span><span class="p">(</span><span class="n">eva</span><span class="p">,</span> <span class="n">INDICADOR_COL</span> <span class="k">if</span> <span class="s1">&#39;INDICADOR_COL&#39;</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">()</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Indicador previo:&quot;</span><span class="p">,</span> <span class="n">indicador</span><span class="p">)</span>
+
+<span class="c1"># 3) Convertir el indicador a numérico (maneja coma decimal y puntos de miles)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_to_num</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="c1"># si hay comas y puntos, intenta quitar miles y convertir coma decimal</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\.(?=\d</span><span class="si">{3}</span><span class="s2">(?:\D|$))&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># quita . de miles</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>                   <span class="c1"># coma -&gt; punto</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;coerce&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">pd</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">is_numeric_dtype</span><span class="p">(</span><span class="n">eva</span><span class="p">[</span><span class="n">indicador</span><span class="p">]):</span>
+    <span class="n">eva</span><span class="p">[</span><span class="n">indicador</span><span class="p">]</span> <span class="o">=</span> <span class="n">_to_num</span><span class="p">(</span><span class="n">eva</span><span class="p">[</span><span class="n">indicador</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Indicador numérico? &quot;</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">is_numeric_dtype</span><span class="p">(</span><span class="n">eva</span><span class="p">[</span><span class="n">indicador</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Resumen indicador en EVA -&gt; count:&quot;</span><span class="p">,</span> <span class="n">eva</span><span class="p">[</span><span class="n">indicador</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span>
+      <span class="s2">&quot;min:&quot;</span><span class="p">,</span> <span class="n">eva</span><span class="p">[</span><span class="n">indicador</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">skipna</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="s2">&quot;max:&quot;</span><span class="p">,</span> <span class="n">eva</span><span class="p">[</span><span class="n">indicador</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">skipna</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+
+<span class="c1"># 4) Agregación municipal -&gt; departamental</span>
+<span class="k">if</span> <span class="s1">&#39;AGREGACION&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">()</span> <span class="ow">or</span> <span class="n">AGREGACION</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;sum&quot;</span><span class="p">,</span><span class="s2">&quot;mean&quot;</span><span class="p">}:</span>
+    <span class="n">AGREGACION</span> <span class="o">=</span> <span class="s2">&quot;sum&quot;</span>
+<span class="n">agr</span> <span class="o">=</span> <span class="n">eva</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;DPTO_CCDGO&quot;</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="n">indicador</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">AGREGACION</span><span class="p">)</span>
+<span class="n">agr</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;DPTO_CCDGO&quot;</span><span class="p">,</span> <span class="n">indicador</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;agr shape:&quot;</span><span class="p">,</span> <span class="n">agr</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">agr</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="c1"># 5) Verificar gdf (SHP) y su clave</span>
+<span class="k">assert</span> <span class="s1">&#39;gdf&#39;</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">(),</span> <span class="s2">&quot;Falta cargar el SHP en gdf.&quot;</span>
+<span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;DPTO_CCDGO&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;DPTO_CCDGO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DPTO_CCDGO únicos en gdf:&quot;</span><span class="p">,</span> <span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;DPTO_CCDGO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">())</span>
+
+<span class="c1"># 6) Merge + cobertura</span>
+<span class="n">merged</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">agr</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;DPTO_CCDGO&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span>
+<span class="n">ok</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="n">indicador</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">total</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">merged</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cobertura tras merge: </span><span class="si">{</span><span class="n">ok</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">total</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">ok</span><span class="o">/</span><span class="n">total</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">ok</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;⚠️ Todo quedó en NaN: revisa que `indicador` sea la métrica correcta y que no dejaste filtros muy restrictivos.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ejemplos sin dato:&quot;</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">merged</span><span class="p">[[</span><span class="s2">&quot;DPTO_CCDGO&quot;</span><span class="p">,</span><span class="s2">&quot;DPTO_CNMBR&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">merged</span><span class="p">[[</span> <span class="s2">&quot;DPTO_CCDGO&quot;</span><span class="p">,</span><span class="s2">&quot;DPTO_CNMBR&quot;</span><span class="p">,</span> <span class="n">indicador</span> <span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FILTRO_ANIO = None | FILTRO_PRODUCTO = None
+Filas EVA: 206068
+DPTO_CCDGO únicos en EVA: 32
+DPTO_CCDGO
+15    20576
+05    18759
+25    17805
+41    15926
+76    15774
+Name: count, dtype: int64
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Indicador previo: CÓD. 
+DEP.
+Indicador numérico?  True
+Resumen indicador en EVA -&gt; count: 206068 min: 5 max: 99
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>agr shape: (32, 2)
+  DPTO_CCDGO  CÓD. \nDEP.
+0         05        93795
+1         08        30472
+2         13        65884
+3         15       308640
+4         17        90814
+DPTO_CCDGO únicos en gdf: 33
+Cobertura tras merge: 32/33 = 96.97%
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>DPTO_CCDGO</th>
+      <th>DPTO_CNMBR</th>
+      <th>CÓD. \nDEP.</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>05</td>
+      <td>ANTIOQUIA</td>
+      <td>93795.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>08</td>
+      <td>ATLÁNTICO</td>
+      <td>30472.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>11</td>
+      <td>BOGOTÁ, D.C.</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>13</td>
+      <td>BOLÍVAR</td>
+      <td>65884.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>15</td>
+      <td>BOYACÁ</td>
+      <td>308640.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>17</td>
+      <td>CALDAS</td>
+      <td>90814.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>18</td>
+      <td>CAQUETÁ</td>
+      <td>42192.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>19</td>
+      <td>CAUCA</td>
+      <td>159315.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>20</td>
+      <td>CESAR</td>
+      <td>97740.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>23</td>
+      <td>CÓRDOBA</td>
+      <td>117783.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Este bloque muestra los resultados del preprocesamiento y agregación de la base EVA, junto con la validación del cruce con el shapefile de departamentos.</p>
+<ol class="arabic simple">
+<li><p><strong>Filtros aplicados</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FILTRO_ANIO</span> <span class="pre">=</span> <span class="pre">None</span></code> → no se aplicó restricción por año, por lo que se incluyeron todos los registros.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FILTRO_PRODUCTO</span> <span class="pre">=</span> <span class="pre">None</span></code> → no se limitó a un cultivo específico, se tomó la totalidad de productos.</p></li>
+</ul>
+</li>
+<li><p><strong>Dimensiones del dataset</strong></p>
+<ul class="simple">
+<li><p>Total de filas en EVA: <strong>206,068</strong>.</p></li>
+<li><p>Departamentos únicos (<code class="docutils literal notranslate"><span class="pre">DPTO_CCDGO</span></code>): <strong>32</strong>, lo que coincide con la división político-administrativa de Colombia (excluyendo el mar territorial y áreas no departamentales).</p></li>
+</ul>
+</li>
+<li><p><strong>Distribución de registros</strong></p>
+<ul class="simple">
+<li><p>Departamentos con más registros (ejemplo):</p>
+<ul>
+<li><p>Boyacá (15) → 20,576 registros.</p></li>
+<li><p>Antioquia (05) → 18,759 registros.</p></li>
+<li><p>Cundinamarca (25) → 17,805 registros.</p></li>
+<li><p>Huila (41) → 15,926 registros.</p></li>
+<li><p>Valle del Cauca (76) → 15,774 registros.</p></li>
+</ul>
+</li>
+<li><p>Se confirma que los departamentos agrícolas más relevantes tienen mayor volumen de registros.</p></li>
+</ul>
+</li>
+<li><p><strong>Indicador detectado</strong></p>
+<ul class="simple">
+<li><p>Columna usada inicialmente: <strong><code class="docutils literal notranslate"><span class="pre">CÓD.</span> <span class="pre">DEP.</span></code></strong>.</p></li>
+<li><p>Se reconoce como <strong>columna numérica válida</strong> (<code class="docutils literal notranslate"><span class="pre">Indicador</span> <span class="pre">numérico?</span> <span class="pre">True</span></code>).</p></li>
+<li><p>Resumen estadístico:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">count</span> <span class="pre">=</span> <span class="pre">206,068</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min</span> <span class="pre">=</span> <span class="pre">5</span></code>, <code class="docutils literal notranslate"><span class="pre">max</span> <span class="pre">=</span> <span class="pre">99</span></code> (valores de códigos departamentales).</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Resultado de la agregación</strong></p>
+<ul class="simple">
+<li><p>Tras agrupar (<code class="docutils literal notranslate"><span class="pre">agr</span> <span class="pre">shape</span></code>): <strong>32 filas × 2 columnas</strong> → un registro por cada departamento.</p></li>
+<li><p>Ejemplo de valores agregados:</p>
+<ul>
+<li><p>Antioquia (05) → 93,795</p></li>
+<li><p>Atlántico (08) → 30,472</p></li>
+<li><p>Bolívar (13) → 65,884</p></li>
+<li><p>Boyacá (15) → 308,640</p></li>
+<li><p>Caldas (17) → 90,814</p></li>
+</ul>
+</li>
+<li><p>Esto muestra que la agregación está funcionando correctamente.</p></li>
+</ul>
+</li>
+<li><p><strong>Cobertura espacial en el merge</strong></p>
+<ul class="simple">
+<li><p>Departamentos únicos en shapefile (<code class="docutils literal notranslate"><span class="pre">gdf</span></code>): <strong>33</strong>.</p></li>
+<li><p>Departamentos únicos en EVA: <strong>32</strong>.</p></li>
+<li><p>Cobertura tras la unión: <strong>32/33 = 96.97%</strong>.</p></li>
+<li><p>Esto indica que <strong>un departamento del shapefile no tiene registros en EVA</strong> (probablemente San Andrés, Guainía o Vaupés, que suelen estar ausentes en algunas bases de datos agrícolas).</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="cruce-y-validacion">
+<h2>6. Cruce y validación<a class="headerlink" href="#cruce-y-validacion" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ==== RECUPERACIÓN: construir agr + merge + validación ====</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span><span class="o">,</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># 0) Asegura que EVA y parámetros existen</span>
+<span class="k">assert</span> <span class="s1">&#39;eva&#39;</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">(),</span> <span class="s2">&quot;Primero ejecuta la celda que CARGA el CSV en la variable `eva`.&quot;</span>
+<span class="k">if</span> <span class="s1">&#39;AGREGACION&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">():</span>
+    <span class="n">AGREGACION</span> <span class="o">=</span> <span class="s2">&quot;sum&quot;</span>  <span class="c1"># por si no estaba</span>
+
+<span class="c1"># 1) Asegurar DPTO_CCDGO en eva</span>
+<span class="k">if</span> <span class="s1">&#39;DPTO_CCDGO&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">eva</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="c1"># intenta derivarlo de columnas comunes</span>
+    <span class="n">col_dpto</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">eva</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="s2">&quot;dpto&quot;</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">&quot;cod&quot;</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">or</span> <span class="s2">&quot;ccdgo&quot;</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">lower</span><span class="p">())),</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="n">col_mpio</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">eva</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">k</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;mpio&quot;</span><span class="p">,</span><span class="s2">&quot;municip&quot;</span><span class="p">,</span><span class="s2">&quot;divipola&quot;</span><span class="p">])),</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">col_dpto</span><span class="p">:</span>
+        <span class="n">eva</span><span class="p">[</span><span class="s2">&quot;DPTO_CCDGO&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">eva</span><span class="p">[</span><span class="n">col_dpto</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(\d+)&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">col_mpio</span><span class="p">:</span>
+        <span class="n">base</span> <span class="o">=</span> <span class="n">eva</span><span class="p">[</span><span class="n">col_mpio</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(\d+)&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">eva</span><span class="p">[</span><span class="s2">&quot;DPTO_CCDGO&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">str</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No se pudo crear `DPTO_CCDGO` desde EVA. Revisa columnas de dpto/municipio.&quot;</span><span class="p">)</span>
+
+<span class="c1"># 2) Detectar/confirmar indicador si no existe</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_detecta_indicador_col</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">prefer</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">prefer</span> <span class="ow">and</span> <span class="n">prefer</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="ow">and</span> <span class="n">pd</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">is_numeric_dtype</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">prefer</span><span class="p">]):</span>
+        <span class="k">return</span> <span class="n">prefer</span>
+    <span class="n">excluir</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;DPTO_CCDGO&quot;</span><span class="p">,</span><span class="s2">&quot;DPTO_CNMBR&quot;</span><span class="p">,</span><span class="s2">&quot;DPTO&quot;</span><span class="p">,</span><span class="s2">&quot;DEPARTAMENTO&quot;</span><span class="p">,</span><span class="s2">&quot;NOMBRE&quot;</span><span class="p">,</span><span class="s2">&quot;NOMBRE_DPTO&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;COD_MPIO&quot;</span><span class="p">,</span><span class="s2">&quot;MPIO_CCDGO&quot;</span><span class="p">,</span><span class="s2">&quot;CODIGO_MPIO&quot;</span><span class="p">,</span><span class="s2">&quot;DIVIPOLA&quot;</span><span class="p">,</span><span class="s2">&quot;CODIGO_DIVIPOLA&quot;</span><span class="p">}</span>
+    <span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">c</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">excluir</span> <span class="ow">and</span> <span class="n">pd</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">is_numeric_dtype</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">c</span><span class="p">])]</span>
+    <span class="n">cand</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">c</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">&gt;</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">s</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">skipna</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+            <span class="n">cand</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">s</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">c</span><span class="p">))</span>
+    <span class="n">cand</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">cand</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">cand</span> <span class="k">else</span> <span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">nums</span> <span class="k">else</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">indicador</span>  <span class="c1"># ¿ya existe?</span>
+<span class="k">except</span> <span class="ne">NameError</span><span class="p">:</span>
+    <span class="n">indicador</span> <span class="o">=</span> <span class="n">_detecta_indicador_col</span><span class="p">(</span><span class="n">eva</span><span class="p">,</span> <span class="n">INDICADOR_COL</span> <span class="k">if</span> <span class="s1">&#39;INDICADOR_COL&#39;</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">()</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Indicador seleccionado para agregar:&quot;</span><span class="p">,</span> <span class="n">indicador</span><span class="p">)</span>
+
+<span class="c1"># 3) Agregación municipal → departamental</span>
+<span class="k">if</span> <span class="n">AGREGACION</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;sum&quot;</span><span class="p">,</span><span class="s2">&quot;mean&quot;</span><span class="p">}:</span>
+    <span class="n">AGREGACION</span> <span class="o">=</span> <span class="s2">&quot;sum&quot;</span>
+<span class="n">agr</span> <span class="o">=</span> <span class="n">eva</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;DPTO_CCDGO&quot;</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="n">indicador</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">AGREGACION</span><span class="p">)</span>
+<span class="n">agr</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;DPTO_CCDGO&quot;</span><span class="p">,</span> <span class="n">indicador</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tabla `agr` creada:&quot;</span><span class="p">,</span> <span class="n">agr</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="c1"># 4) Asegurar gdf cargado (SHP)</span>
+<span class="k">if</span> <span class="s1">&#39;gdf&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">():</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">geopandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gpd</span>
+    <span class="k">assert</span> <span class="s1">&#39;RUTA_SHP&#39;</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">(),</span> <span class="s2">&quot;Falta `RUTA_SHP`. Define la ruta al .shp en la celda de parámetros.&quot;</span>
+    <span class="n">shp_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">RUTA_SHP</span><span class="p">)</span>
+    <span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">shp_path</span><span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;dpto_ccdgo&quot;</span><span class="p">:</span><span class="s2">&quot;DPTO_CCDGO&quot;</span><span class="p">,</span><span class="s2">&quot;dpto_cnmbr&quot;</span><span class="p">:</span><span class="s2">&quot;DPTO_CNMBR&quot;</span><span class="p">})</span>
+    <span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;DPTO_CCDGO&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;DPTO_CCDGO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(\d+)&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># 5) Merge + validación</span>
+<span class="n">merged</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">agr</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;DPTO_CCDGO&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span>
+<span class="n">total</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">merged</span><span class="p">)</span>
+<span class="n">ok</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="n">indicador</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">no_ok</span> <span class="o">=</span> <span class="n">total</span> <span class="o">-</span> <span class="n">ok</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total dptos: </span><span class="si">{</span><span class="n">total</span><span class="si">}</span><span class="s2"> | Con indicador: </span><span class="si">{</span><span class="n">ok</span><span class="si">}</span><span class="s2"> | Sin indicador: </span><span class="si">{</span><span class="n">no_ok</span><span class="si">}</span><span class="s2"> | Cobertura: </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">ok</span><span class="o">/</span><span class="n">total</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2"> %&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">no_ok</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">merged</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">merged</span><span class="p">[</span><span class="n">indicador</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">(),</span> <span class="p">[</span><span class="s2">&quot;DPTO_CCDGO&quot;</span><span class="p">,</span><span class="s2">&quot;DPTO_CNMBR&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Indicador seleccionado para agregar: CÓD. 
+DEP.
+Tabla `agr` creada: (32, 2)
+Total dptos: 33 | Con indicador: 32 | Sin indicador: 1 | Cobertura: 96.97 %
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>DPTO_CCDGO</th>
+      <th>DPTO_CNMBR</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>11</td>
+      <td>BOGOTÁ, D.C.</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>La salida confirma la creación de la tabla agregada (<code class="docutils literal notranslate"><span class="pre">agr</span></code>) y muestra un resumen de la cobertura de los indicadores frente a los departamentos del shapefile.</p>
+<ol class="arabic simple">
+<li><p><strong>Indicador seleccionado</strong></p>
+<ul class="simple">
+<li><p>El sistema eligió como indicador la columna <strong><code class="docutils literal notranslate"><span class="pre">CÓD.</span> <span class="pre">DEP.</span></code></strong>.</p></li>
+<li><p>Este valor fue usado para realizar la agregación por departamento.</p></li>
+</ul>
+</li>
+<li><p><strong>Tabla agregada (<code class="docutils literal notranslate"><span class="pre">agr</span></code>)</strong></p>
+<ul class="simple">
+<li><p>La tabla resultante tiene dimensiones <strong>(32, 2)</strong>:</p>
+<ul>
+<li><p><strong>32 filas</strong> → un registro por cada departamento con información.</p></li>
+<li><p><strong>2 columnas</strong> → el código departamental (<code class="docutils literal notranslate"><span class="pre">DPTO_CCDGO</span></code>) y el valor agregado del indicador.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Resumen de cobertura</strong></p>
+<ul class="simple">
+<li><p><strong>Total de departamentos en shapefile:</strong> 33</p></li>
+<li><p><strong>Departamentos con indicador disponible en EVA:</strong> 32</p></li>
+<li><p><strong>Departamentos sin indicador:</strong> 1</p></li>
+<li><p><strong>Cobertura:</strong> 96.97 %</p></li>
+<li><p>Esto confirma que falta información para un solo departamento, lo cual es normal en bases agropecuarias (suele ocurrir con San Andrés, Amazonas, Guainía o Vaupés).</p></li>
+</ul>
+</li>
+<li><p><strong>Ejemplo de validación</strong></p>
+<ul class="simple">
+<li><p>En la vista parcial de la tabla se observa el registro de <strong>Bogotá D.C.</strong> con su código departamental (<code class="docutils literal notranslate"><span class="pre">11</span></code>).</p></li>
+<li><p>Esto valida que los nombres fueron correctamente normalizados y los códigos alineados con el shapefile.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="mapa-coropletico">
+<h2>7. Mapa coroplético<a class="headerlink" href="#mapa-coropletico" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">));</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+<span class="n">merged</span><span class="o">.</span><span class="n">boundary</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">merged</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="n">indicador</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">CMAP</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">missing_kwds</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;lightgrey&quot;</span><span class="p">,</span><span class="s2">&quot;edgecolor&quot;</span><span class="p">:</span><span class="s2">&quot;white&quot;</span><span class="p">,</span><span class="s2">&quot;hatch&quot;</span><span class="p">:</span><span class="s2">&quot;///&quot;</span><span class="p">,</span><span class="s2">&quot;label&quot;</span><span class="p">:</span><span class="s2">&quot;Sin datos&quot;</span><span class="p">})</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">();</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">TITULO_MAPA</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">();</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/485b6bd73e9380f6049c11b22cb7c508d896ecaf3e699ca31b5c2ed2de72e3b0.png" src="_images/485b6bd73e9380f6049c11b22cb7c508d896ecaf3e699ca31b5c2ed2de72e3b0.png" />
+</div>
+</div>
+<p><strong>Escala de colores (CMAP = “Blues”)</strong></p>
+<ul class="simple">
+<li><p>Los tonos más <strong>oscuros</strong> representan valores más altos del indicador.</p></li>
+<li><p>Los tonos más <strong>claros</strong> representan valores más bajos.</p></li>
+<li><p>La barra de escala a la derecha muestra que los valores oscilan desde cerca de <strong>0 hasta más de 1,000,000</strong> (en el indicador agregado).</p></li>
+</ul>
+<p><strong>Departamentos destacados</strong></p>
+<ul class="simple">
+<li><p>Se observa una mayor intensidad en departamentos como:</p>
+<ul>
+<li><p><strong>Valle del Cauca</strong> (suroccidente, muy oscuro).</p></li>
+<li><p><strong>Meta y Cundinamarca</strong> (zona central, alto indicador).</p></li>
+<li><p><strong>Antioquia</strong> (noroccidente, intensidad intermedia-alta).</p></li>
+</ul>
+</li>
+<li><p>Estos resultados son consistentes con departamentos con fuerte actividad agrícola.</p></li>
+</ul>
+<p><strong>Cobertura</strong></p>
+<ul class="simple">
+<li><p>La cobertura es del <strong>96.97%</strong>, lo que significa que <strong>1 de los 33 departamentos no tiene datos asociados</strong> en el dataset EVA.</p></li>
+<li><p>Este departamento aparece en el mapa con el color más claro posible (sin datos numéricos). Usualmente puede tratarse de San Andrés, Amazonas, Vaupés o Guainía.</p></li>
+</ul>
+<p><strong>Interpretación general</strong></p>
+<ul class="simple">
+<li><p>El mapa permite <strong>visualizar desigualdades en la distribución agrícola</strong>: unos pocos departamentos concentran la mayor parte de la producción/indicador, mientras que otros tienen valores mucho menores.</p></li>
+<li><p>Sirve como insumo inicial para identificar regiones agrícolas estratégicas o vacíos de información.</p></li>
+</ul>
+</section>
+<section id="exportaciones">
+<h2>8. Exportaciones<a class="headerlink" href="#exportaciones" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">merged</span><span class="p">[[</span><span class="s2">&quot;DPTO_CCDGO&quot;</span><span class="p">,</span><span class="s2">&quot;DPTO_CNMBR&quot;</span><span class="p">,</span> <span class="n">indicador</span><span class="p">,</span> <span class="s2">&quot;geometry&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="n">EXPORT_GEOJSON</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="s2">&quot;GeoJSON&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GeoJSON:&quot;</span><span class="p">,</span> <span class="n">EXPORT_GEOJSON</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No se pudo exportar GeoJSON:&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+
+<span class="n">merged</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s2">&quot;geometry&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">EXPORT_CSV_JOIN</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CSV:&quot;</span><span class="p">,</span> <span class="n">EXPORT_CSV_JOIN</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GeoJSON: eva_departamental.geojson
+CSV: eva_departamental_tabla.csv
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Evaluaciones Agropecuarias Municipales (EVA) — Análisis Departamental</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivo-del-taller">Objetivo del taller</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros">1. Parámetros</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rutas-de-archivos">1. Rutas de Archivos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indicador-y-metodo-de-agregacion">2. Indicador y Método de Agregación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtros-opcionales">3. Filtros Opcionales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#personalizacion-del-mapa">4. Personalización del Mapa</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exportacion-de-resultados">5. Exportación de Resultados</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verificacion-de-ejecucion">6. Verificación de Ejecución</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importaciones">2. Importaciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utilidades">3. Utilidades</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normaliza-texto-x">1. <code class="docutils literal notranslate"><span class="pre">normaliza_texto(x)</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normaliza-nombre-dep-x">2. <code class="docutils literal notranslate"><span class="pre">normaliza_nombre_dep(x)</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detecta-indicador-col-df-prefer-none">3. <code class="docutils literal notranslate"><span class="pre">detecta_indicador_col(df,</span> <span class="pre">prefer=None)</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#carga-shp">4. Carga SHP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#carga-eva-agregacion">5. Carga EVA → Agregación</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cruce-y-validacion">6. Cruce y validación</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapa-coropletico">7. Mapa coroplético</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exportaciones">8. Exportaciones</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Juan Andres ramos Cardona
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
